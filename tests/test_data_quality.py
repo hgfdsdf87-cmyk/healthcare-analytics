@@ -25,6 +25,7 @@ print("="*60)
 # Load
 try:
     df = pd.read_csv("healthcare_dataset.csv")
+    df = df[df["Billing Amount"] > 0]
     print(f"\n  Loaded: {len(df):,} rows × {len(df.columns)} columns\n")
 except FileNotFoundError:
     print("❌ healthcare_dataset.csv not found — skipping tests")
